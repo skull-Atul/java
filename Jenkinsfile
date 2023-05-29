@@ -1,3 +1,5 @@
+@Library('shared-lib') _
+
 pipeline{
 
     agent any
@@ -10,7 +12,10 @@ pipeline{
 
                 script{
 
-                    git branch: 'main', url: 'https://github.com/skull-Atul/java.git'
+                    gitCheckout(
+                        branch: "main"
+                        url: "https://github.com/skull-Atul/java.git"
+                    )
                 }
             }
         }
